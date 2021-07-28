@@ -1,0 +1,30 @@
+.mainBtn {
+  background: $btn-color;
+  color: $main-color;
+}
+
+.secondaryBtn {
+  background: $main-color;
+  color: $btn-color;
+}
+
+.form__button{
+  display: flex;
+  justify-content: center;
+}
+
+.form__button--btn {
+  border: 2px solid $btn-color;
+  border-radius: 20px;
+  font-size: $size-s;
+  font-weight: bold;
+  padding: $size;
+  text-transform: capitalize;
+  width: 12rem;
+
+  &:hover {
+    background: #168ac0;
+    border: 2px solid #168ac0;
+    color: $main-color;
+  }
+}

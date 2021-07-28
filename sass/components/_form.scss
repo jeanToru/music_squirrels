@@ -1,0 +1,37 @@
+.container__form {
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 5rem;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  justify-content: center;
+  margin-top: 104px;
+  padding: 3.5rem;
+  width: 35%;
+}
+
+form {
+  color: $secondary-color;
+  font-size: $size-s;
+  text-transform: capitalize;
+  width: 100%;
+
+  label {
+    font-weight: bold;
+  }
+
+  input {
+    border: 1px solid #CCCCCC;
+    border-radius: 0.8rem;
+    font-family: $secondary-typo;
+    padding: $size;
+    margin-bottom: $size;
+    width: 94%;
+
+    &::placeholder {
+    color: #666666;
+    text-transform: capitalize;
+    }
+  }
+}
