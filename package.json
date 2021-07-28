@@ -1,0 +1,19 @@
+{
+  "name": "music_squirrels",
+  "version": "2.0.0",
+  "description": "Proyecto final javascript 4",
+  "scripts": {
+    "sass": "node-sass -w sass -o public/css",
+    "sass-build": "node-sass sass -o public/css --output-style compressed",
+    "dev-server": "live-server --watch=\"index.html,sass,js\"",
+    "eslint": "eslint js",
+    "dev": "npm run sass-build && concurrently \"npm run sass\" \"npm run dev-server\" \"esw -w js\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "live-server": "^1.2.1",
+    "livereload": "^0.9.1",
+    "node-sass": "^4.14.1"
+  }
+}
