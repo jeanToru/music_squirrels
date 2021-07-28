@@ -1,0 +1,29 @@
+.title {
+    color: $main-color;
+    font-size: 36px;
+}
+  
+.artist {
+    display: inline-block;
+    margin-top: 250px;
+}
+  
+.artist_content {
+    display: inline-block;
+}
+  
+.artist_content + .artist_content {
+    margin-left: 20px;
+}
+  
+.artist_content--name {
+    color: $main-color;
+    font-size: 24px;
+    text-align: center;
+}
+  
+.artist_content--album {
+    border-radius: 35px;
+    height: 201px;
+    width: 164px;
+}
