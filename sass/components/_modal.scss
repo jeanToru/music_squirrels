@@ -1,0 +1,96 @@
+.position {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.background {
+  background: rgba(20, 20, 20, 0.3);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.container__modal {
+  position: absolute;
+  left: 30vw;
+
+  h2 {
+    color: $third-color;
+    font-size: $size-l;
+    margin: 0 0 2rem 0;
+  }
+  button {
+    margin-top: 2rem;
+  }
+}
+
+.js__none {
+  display: none;
+}
+
+.container__modal--text {
+  font-size: $size-m;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border: 0 !important;
+  box-shadow: none;
+  background: $main-color;
+  background-image: none;
+  font-family: $secondary-typo;
+  outline: 0;
+
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  background: $main-color;
+  border: 1px solid #CCCCCC;
+  border-radius: 0.8rem;
+  display: flex;
+  font-family: $secondary-typo;
+  line-height: 3;
+  overflow: hidden;
+  padding: $size;
+  position: relative;
+}
+
+select {
+  color: $secondary-color;
+  cursor: pointer;
+  flex: 1;
+}
+
+.select::after {
+  background: $btn-color;
+  color: $main-color;
+  cursor: pointer;
+  content: '\25BC';
+  padding: 0 1em;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+
+.select:hover::after {
+  color: $secondary-color;
+}
+
+.container__modal--text {
+  font-size: $size-m;
+}

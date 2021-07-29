@@ -24,6 +24,33 @@
     </div>
     <audio crossorigin="anonymous" src="" id="audio" type="audio/mp3"></audio>
   </div>
+
+  <div class="background">
+    <div class="wrapper">
+      <div class="container__modal container__form">
+        <h2 class="title">Add to a list</h2>
+        <form class="form" action="">
+          <div class="form__logIn">
+            <label for="">New List</label>
+            <input type="text" placeholder="Enter new List">
+            <label for="">Existing List</label>
+            <div class="select">
+              <select name="slct" id="slct">
+                <option class="option" selected disabled>Choose a Playlist</option>
+                <option class="option" value="1">PlayList 1</option>
+                <option class="option" value="2">PlayList 2</option>
+                <option class="option" value="3">PlayList 3</option>
+              </select>
+            </div>
+            <div class="form__button">
+              <button class="form__button--btn mainBtn" type="submit">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="../js/modal.js"></script>
 </body>
 
 </html>
