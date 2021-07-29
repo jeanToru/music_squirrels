@@ -162,3 +162,71 @@ form {
     font-size: 1.8rem;
     margin: 0;
     text-align: center; }
+
+.musicPlayer {
+  width: 100%;
+  position: relative; }
+
+.musicPlayer_nameSong {
+  color: #FFFFFF;
+  font-size: 5rem;
+  font-weight: bold;
+  margin-top: 50px; }
+
+.musicPlayerimage {
+  width: 100%;
+  margin-top: 150px;
+  border-radius: 50px; }
+
+.addPlaylist {
+  background-image: url(../../img/plus.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 4rem;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  margin-left: 25px; }
+
+.before {
+  background-image: url(../../img/before.svg); }
+
+.play {
+  background-image: url(../../img/play.svg);
+  font-size: 6rem; }
+
+.pause {
+  background-image: url(../../img/pause.svg); }
+
+.after {
+  background-image: url(../../img/after.svg); }
+
+.favorite {
+  background-image: url(../../img/favorite.svg);
+  margin-left: 105px; }
+
+.musicPlayercontrol {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13.2648px 100px;
+  width: 230px;
+  height: 60px;
+  background: #8F44AE;
+  border-radius: 19.8972px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin-top: 20px;
+  margin-left: 125px; }
+
+canvas {
+  background: #36B2EB;
+  border-radius: 5rem;
+  width: 100%; }
