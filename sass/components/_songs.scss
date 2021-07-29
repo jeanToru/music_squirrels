@@ -1,0 +1,38 @@
+.songsList {
+  display: inline-block;
+  flex-direction: column;
+  font-size: $size-s;
+  margin:3rem 0 2rem 0;
+  width: 53rem;
+}
+
+.songList__item {
+  align-items: center;
+  border-bottom: 0.1rem solid $secondary-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+
+  img {
+    border-radius: 2rem;
+    width: 15%;
+    height: 15%;
+  }
+}
+
+.songsList__item--name {
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  p {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  span {
+    font-family: $secondary-typo;
+  }
+}
