@@ -93,4 +93,9 @@ select {
 
 .container__modal--text {
   font-size: $size-m;
+  color: $main-color;
+}
+
+.alert {
+  background: $third-color;
 }
