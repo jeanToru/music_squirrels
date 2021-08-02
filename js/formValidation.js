@@ -1,9 +1,9 @@
-import { checkData, signUp } from "./apiUsers.js";
-const modal = document.querySelector('.container__modal');
-modal.classList.add('js__none');
+import { checkData, login } from "./apiUsers.js";
 
 const validation = document.getElementById('createUser');
-const login = document.getElementById('login');
+const register = document.getElementById('login');
+const modal = document.querySelector('.container__modal');
+modal.classList.add('js__none');
 
 validation.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -11,19 +11,18 @@ validation.addEventListener('submit', (e) => {
   const passwordConfirm = validation.elements[3].value;
   const userName = validation.elements[0].value;
   const userEmail = validation.elements[1].value;
-  if (password === passwordConfirm){
-    checkData(userEmail, password, userName)
+  if (password === passwordConfirm) {
+    checkData(userEmail, password, userName);
   } else {
     modalAlert();
   }
 });
 
-login.addEventListener('submit', (e) => {
+register.addEventListener('submit', (e) => {
   e.preventDefault();
-  const passwordConfirm = {
-    password: login.elements[0].value
-  }
-  signUp(login.elements[0].value, passwordConfirm);
+  const email = register.elements[0].value;
+  const passwordConfirm = register.elements[1].value;
+  login(email, passwordConfirm);
 });
 
 function modalAlert() {
@@ -31,7 +30,7 @@ function modalAlert() {
   const btnOk = document.querySelector('.js-btn-ok');
   btnOk.addEventListener('click', (event) => {
     const target = event.target;
-    if(target.tagName === 'BUTTON') {
+    if (target.tagName === 'BUTTON') {
       modal.classList.add('js__none');
     }
   })
