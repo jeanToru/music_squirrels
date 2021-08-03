@@ -63,8 +63,8 @@ function recentSong() {
     .then((response) => {
       return response.json();
     })
-    .then((recent) => {
-      apiSong(recent.data.songs[recent.data.songs.length - 1])
+    .then((data) => {
+      apiSong(data.data[0].songs[data.data[0].songs.length - 1]);
     })
 }
 

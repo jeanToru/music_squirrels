@@ -13,7 +13,6 @@ validation.addEventListener('submit', (e) => {
   const userEmail = validation.elements[1].value;
   if (password === passwordConfirm) {
     checkData(userEmail, password, userName);
-    // window.location.href = './homeLogin/index.html'
   } else {
     modalAlert();
   }
@@ -24,6 +23,7 @@ register.addEventListener('submit', (e) => {
   const email = register.elements[0].value;
   const password = register.elements[1].value;
   login(email, password);
+  e.target.reset();
 });
 
 function modalAlert() {

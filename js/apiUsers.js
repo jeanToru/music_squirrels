@@ -14,6 +14,7 @@ function create(user) {
     })
     .then((data) => {
       console.log(data);
+      window.location.href = '../homeLogin/index.html';
     })
 }
 
@@ -36,6 +37,7 @@ function login(email, password) {
       console.log(data.data._id);
       localStorage.setItem('idUserLogin', data.data._id);
       localStorage.setItem('idUserName', data.data.name);
+      window.location.href = './homeLogin/index.html';
     })
 }
 
@@ -54,7 +56,6 @@ function checkData(email, password, name) {
         "password": `${password}`,
       }
       create(newUser);
-      //window.location.href = './homeLogin/index.html'
     })
 }
 
