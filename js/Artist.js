@@ -22,13 +22,13 @@ class Artist {
   addDescriptionDOM() {
     const contentDoom = document.querySelector('.js-description');
     const content = `
-      <div id="${this.id}" class="box__content">
-        <h1>${this.name}</h1>
-        <img src="${this.image}" alt="${this.name}">
-        <p>${this.description}</p>
-      </div>
+    <div id="${this.id}" class="box__content">
+    <h1>${this.name}</h1>
+    <img src="${this.image}" alt="${this.name}">
+    <p>${this.description}</p>
+    </div>
     `;
-   contentDoom.innerHTML += content;
+    contentDoom.innerHTML += content;
   }
 }
 

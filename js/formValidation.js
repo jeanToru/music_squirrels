@@ -1,4 +1,4 @@
-import { checkData, login } from "./apiUsers.js";
+import { login, checkData } from "./apiUsers.js";
 
 const validation = document.getElementById('createUser');
 const register = document.getElementById('login');
@@ -13,6 +13,7 @@ validation.addEventListener('submit', (e) => {
   const userEmail = validation.elements[1].value;
   if (password === passwordConfirm) {
     checkData(userEmail, password, userName);
+    // window.location.href = './homeLogin/index.html'
   } else {
     modalAlert();
   }
@@ -21,8 +22,8 @@ validation.addEventListener('submit', (e) => {
 register.addEventListener('submit', (e) => {
   e.preventDefault();
   const email = register.elements[0].value;
-  const passwordConfirm = register.elements[1].value;
-  login(email, passwordConfirm);
+  const password = register.elements[1].value;
+  login(email, password);
 });
 
 function modalAlert() {

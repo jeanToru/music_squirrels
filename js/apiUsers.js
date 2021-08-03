@@ -1,5 +1,5 @@
-const urlUsers = 'https://squirrelsmusic.herokuapp.com/users'
-const ulrUser = 'https://squirrelsmusic.herokuapp.com/user'
+const urlUsers = 'https://squirrelsmusic.herokuapp.com/users';
+const ulrUser = 'https://squirrelsmusic.herokuapp.com/user';
 
 function create(user) {
   fetch(ulrUser, {
@@ -33,7 +33,9 @@ function login(email, password) {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
+      console.log(data.data._id);
+      localStorage.setItem('idUserLogin', data.data._id);
+      localStorage.setItem('idUserName', data.data.name);
     })
 }
 
@@ -52,10 +54,11 @@ function checkData(email, password, name) {
         "password": `${password}`,
       }
       create(newUser);
+      //window.location.href = './homeLogin/index.html'
     })
 }
 
 export {
-  checkData,
-  login
+  login,
+  checkData
 }
