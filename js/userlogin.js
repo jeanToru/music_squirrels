@@ -1,9 +1,11 @@
 const urlUsers = 'https://squirrelsmusic.herokuapp.com/users';
 const urlUser = 'https://squirrelsmusic.herokuapp.com/user';
 const urlRecent = 'https://squirrelsmusic.herokuapp.com/recent';
+const urlSongs = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/song/';
 
 let idUser = localStorage.getItem('idUserLogin');
-let nameUser = localStorage.getItem('nameLogin');
+let nameUser = localStorage.getItem('idUserName');
+let image = localStorage.getItem('image');
 
 class Data {
   constructor(data) {
@@ -16,7 +18,7 @@ class Data {
       <div class="box__content">
         <h1>welcome, ${this.data}</h1>
         <p>Go to the last song you listening</p>
-        <img src="${this.data}" alt="">
+        <img src="${image}" alt="">
           <button class="mainBtn form__button--btn">Play</button>
     </div>
     `;
@@ -62,6 +64,23 @@ function recentSong() {
       return response.json();
     })
     .then((recent) => {
-        console.log(recent);
+      apiSong(recent.data.songs[recent.data.songs.length - 1])
     })
 }
+
+function apiSong(idSong) {
+  fetch(`${urlSongs}${idSong}`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      localStorage.setItem('image', data.image);
+    })
+
+}
+
+checkUsers();
+userFetch();
+recentSong();
