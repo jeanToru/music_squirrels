@@ -14,7 +14,7 @@ function create(user) {
     })
     .then((data) => {
       console.log(data);
-      window.location.href = '../homeLogin/index.html';
+      //window.location.href = '../homeLogin/index.html';
     })
 }
 
@@ -55,6 +55,8 @@ function checkData(email, password, name) {
         "email": `${email}`,
         "password": `${password}`,
       }
+      localStorage.setItem('idUserName', newUser.name);
+      localStorage.getItem('idUserSingUp');
       create(newUser);
     })
 }

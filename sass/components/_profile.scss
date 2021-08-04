@@ -1,0 +1,57 @@
+.sideBar {
+  width: 430px;
+
+  h3:hover {
+    background: $third-color;
+    border-radius: 1rem;
+    color: $main-color;
+    padding: 1rem;
+    margin: 0;
+  }
+}
+
+.sideBar__join {
+  border-bottom: 0.1rem solid $secondary-color;
+  cursor: pointer;
+  font-size: $size-s;
+  margin-bottom: 4rem;
+  padding: 1.5rem 0 1rem 0;
+}
+
+.sideBar__user {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sidebar__edit {
+  background: transparent;
+  border: none;
+}
+
+.sidebar__edit {
+  background-image: url(../../img/edit.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  font-size: 4rem;
+  overflow: hidden;
+  padding: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.songList__edit {
+  border-bottom: 0.1rem solid $secondary-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  h2 {
+    font-size: $size-l;
+  }
+}
+
+.song__container {
+  width: 530px;
+}

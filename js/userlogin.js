@@ -1,5 +1,4 @@
 const urlUsers = 'https://squirrelsmusic.herokuapp.com/users';
-const urlUser = 'https://squirrelsmusic.herokuapp.com/user';
 const urlRecent = 'https://squirrelsmusic.herokuapp.com/recent';
 const urlSongs = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/song/';
 
@@ -12,7 +11,19 @@ class Data {
     this.data = data;
   }
 
-  addUser() {
+  addUserSignUp() {
+    const contentD = document.getElementById('js-singUp');
+    const content = `
+      <div class="box__content">
+        <h1>welcome, ${this.data}</h1>
+        <p>You don't have recent Music</p>
+        <button class="mainBtn form__button--btn">Play</button>
+    </div>
+    `;
+    contentD.innerHTML = content;
+  }
+
+  addUserLogin() {
     const contentD = document.getElementById('js-welcome');
     const content = `
       <div class="box__content">
@@ -34,25 +45,14 @@ function checkUsers() {
       return response.json();
     })
     .then((data) => {
-      console.log(data)
       for (let i = 0; i < data.data.length; i++) {
         if (data.data[i].name === nameUser) {
+          console.log(data.data[i]._id)
+          console.log(localStorage.setItem('idUserSingUp', data.data[i]._id));
           const userWelcome = new Data(data.data[i].name);
-          userWelcome.addUser();
+          userWelcome.addUserLogin();
         }
       }
-    })
-}
-
-function userFetch() {
-  fetch(`${urlUser}/${idUser}`, {
-    method: "GET",
-  })
-    .then((response) => {
-      return response.json();
-    })
-    .then((user) => {
-      console.log(user)
     })
 }
 
@@ -78,9 +78,7 @@ function apiSong(idSong) {
     .then((data) => {
       localStorage.setItem('image', data.image);
     })
-
 }
 
 checkUsers();
-userFetch();
 recentSong();
