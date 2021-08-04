@@ -14,7 +14,6 @@ function create(user) {
     })
     .then((data) => {
       console.log(data);
-      //window.location.href = '../homeLogin/index.html';
     })
 }
 
