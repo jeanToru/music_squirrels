@@ -4,7 +4,7 @@ let idUser = localStorage.getItem('idUserLogin');
 const btnEdit = document.querySelector('.js-profileName');
 
 function chanceName() {
-  fetch('https://squirrelsmusic.herokuapp.com/user/6109992d3296a000043ed87e', {
+  fetch(`${urlUserEspecific}${idUser}`, {
     method: 'GET',
   })
     .then((response) => {

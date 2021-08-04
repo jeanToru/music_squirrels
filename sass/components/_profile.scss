@@ -1,6 +1,7 @@
 .sideBar {
   width: 430px;
-
+  display: inline-block;
+  margin-top: 5rem;
   h3:hover {
     background: $third-color;
     border-radius: 1rem;
@@ -54,4 +55,6 @@
 
 .song__container {
   width: 530px;
+  float: right;
+  margin-top: 7rem;
 }

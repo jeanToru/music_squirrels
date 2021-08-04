@@ -320,7 +320,9 @@ select {
   background: #8F44AE; }
 
 .sideBar {
-  width: 430px; }
+  width: 430px;
+  display: inline-block;
+  margin-top: 5rem; }
   .sideBar h3:hover {
     background: #8F44AE;
     border-radius: 1rem;
@@ -365,4 +367,6 @@ select {
     font-size: 2.4rem; }
 
 .song__container {
-  width: 530px; }
+  width: 530px;
+  float: right;
+  margin-top: 7rem; }

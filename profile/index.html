@@ -11,31 +11,6 @@
 
 <body>
   <div class="wrapper">
-
-    <div class="sideBar">
-      <div class="sideBar__join sideBar__user js-profileName">
-      </div>
-      <ul class="sideBar__join sideBar__music">
-        <li class="user">
-          <h3>Recently played</h3>
-        </li>
-        <li class="user">
-          <h3>Your Favorite</h3>
-        </li>
-      </ul>
-      <ul class="sideBar__join sidebar__playlist">
-        <li class="sidebar__playlist--list">
-          <h3>Playlist1</h3>
-        </li>
-        <li class="sidebar__playlist--list">
-          <h3>Playlist2</h3>
-        </li>
-        <li class="sidebar__playlist--list">
-          <h3>Playlist3</h3>
-        </li>
-      </ul>
-    </div>
-
     <div class="song__container">
       <ul class="songList">
         <li class="songList__edit">
@@ -56,8 +31,23 @@
         </li>
       </ul>
     </div>
+    <div class="sideBar">
+      <div class="sideBar__join sideBar__user js-profileName">
+      </div>
+      <ul class="sideBar__join sideBar__music">
+        <li class="user">
+          <h3>Recently played</h3>
+        </li>
+        <li class="user">
+          <h3>Your Favorite</h3>
+        </li>
+      </ul>
+      <ul class="sideBar__join sidebar__playlist js-playList">
+      </ul>
+    </div>
   </div>
-<script src="../js/porfile.js" type="module"></script>
+  <script src="../js/porfile.js" type="module"></script>
+  <script src="../js/Playlist.js" type="module"></script>
 </body>
 
 </html>
