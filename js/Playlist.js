@@ -1,9 +1,12 @@
 import Playlists from "./PLaylists.js";
 import Song from './song.js';
 import Recent from './Recent.js';
+import Favorite from './Favorite.js';
 
 let urlPlaylists = 'https://squirrelsmusic.herokuapp.com/playlists/';
 let idUser = localStorage.getItem('idUserLogin');
+const btnRecent = document.querySelector('.clickRecent');
+const btnFavorite = document.querySelector('.clickFavorite');
 
 function getPlaylitsUser() {
   fetch(`${urlPlaylists}${idUser}`, {
@@ -69,13 +72,20 @@ function playListName(btnPlaylist) {
   })
 }
 
-const btnRecent = document.querySelector('.clickRecent')
 btnRecent.addEventListener('click', (event) => {
   const target = event.target;
   let name = target.innerHTML;
   const recentList = new Recent(name, idUser);
   recentList.getRecentUser();
   recentList.addRecentNameDOM();
+})
+
+btnFavorite.addEventListener('click', (event) => {
+  const target = event.target;
+  let name = target.innerHTML;
+  const favoriteList = new Favorite(name, idUser);
+  favoriteList.getRecentUser();
+  favoriteList.addRecentNameDOM();
 })
 
 getPlaylitsUser();

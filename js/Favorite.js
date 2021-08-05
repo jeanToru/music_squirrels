@@ -1,13 +1,13 @@
 import getSpecificSong from "./Playlist.js";
 
-class Recent {
+class Favorite {
   constructor(name,id) {
     this.name = name;
     this.id = id;
   }
 
   getRecentUser() {
-    const urlPlaylist = 'https://squirrelsmusic.herokuapp.com/recent/';
+    const urlPlaylist = 'https://squirrelsmusic.herokuapp.com/favorite-music/';
     fetch(`${urlPlaylist}${this.id}`, {
       method: "GET",
     })
@@ -15,8 +15,8 @@ class Recent {
         return response.json();
       })
       .then((data) => {
-        const songList = data.data[0].songs;
-        songList.forEach((songs) => {
+        const favoriteSongs = data.data[0].songs;
+        favoriteSongs.forEach((songs) => {
           getSpecificSong(songs);
         })
       })
@@ -28,10 +28,11 @@ class Recent {
     const content = `
     <li class="songList__edit">
       <h2>${this.name}</h2>
+      <button class="sidebar__edit">edit</button>
     </li>
     `;
     contentDOM.innerHTML += content;
   }
 }
 
-export default Recent;
+export default Favorite;
