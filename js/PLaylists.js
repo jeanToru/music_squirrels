@@ -27,7 +27,7 @@ class Playlists {
       })
   }
 
-  AddplaylistNameDOM(){
+  addPlaylistNameDOM(){
     const contentDOM = document.querySelector('.js-playlistName');
     contentDOM.innerHTML = '';
     const content = `
