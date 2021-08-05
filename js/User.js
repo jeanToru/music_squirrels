@@ -1,15 +1,19 @@
-let urlUserEspecific = 'https://squirrelsmusic.herokuapp.com/user/';
+let urlUsers = 'https://squirrelsmusic.herokuapp.com/user/';
+
 class User {
-  constructor(data, userEspecific) {
+  constructor(data, userId) {
     this.data = data;
-    this.userEspecific = userEspecific;
+    this.userId = userId;
   }
+
   updateNameUser() {
-    console.log(this.data)
+    console.log(this.data);
+
     const newName = {
       "name": `${this.data}`,
     }
-    fetch(`${urlUserEspecific}${this.userEspecific}`, {
+
+    fetch(`${urlUsers}${this.userId}`, {
       headers: {
         "Content-Type": "application/json"
     },

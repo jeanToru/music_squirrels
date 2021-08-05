@@ -1,18 +1,19 @@
 import User from "./User.js";
-let urlUserEspecific = 'https://squirrelsmusic.herokuapp.com/user/';
+
+let urlUser = 'https://squirrelsmusic.herokuapp.com/user/';
 let idUser = localStorage.getItem('idUserLogin');
 const btnEdit = document.querySelector('.js-profileName');
 
-function chanceName() {
-  fetch(`${urlUserEspecific}${idUser}`, {
+function changeName() {
+  fetch(`${urlUser}${idUser}`, {
     method: 'GET',
   })
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      const userDoom = new User(data, null);
-      userDoom.nameUserDoom();
+      const userDOM = new User(data, null);
+      userDOM.nameUserDoom();
     })
 }
 
@@ -25,13 +26,13 @@ function updateName(name){
 btnEdit.addEventListener('click', (e) => {
   if (e.target.classList.contains('sidebar__edit')) {
     const userName =  document.querySelector('.sidebar__name');
-    if (!e.target.classList.contains('save')) {
+    if (!e.target.classList.contains('change')) {
       userName.setAttribute('contentEditable', 'true');
     }else {
       updateName(userName)
     }
-    e.target.classList.toggle('save');
+    e.target.classList.toggle('change');
   }
 })
 
-chanceName();
+changeName();

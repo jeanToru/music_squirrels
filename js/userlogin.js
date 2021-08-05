@@ -27,7 +27,9 @@ class Data {
     const contentD = document.getElementById('js-welcome');
     const content = `
       <div class="box__content">
-        <h1>welcome, ${this.data}</h1>
+        <h1>welcome,
+          <a href="../profile/index.html" class="linkProfile">${this.data}</a>
+        </h1>
         <p>Go to the last song you listening</p>
         <img src="${image}" alt="">
           <button class="mainBtn form__button--btn">Play</button>
