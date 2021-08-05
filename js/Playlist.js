@@ -1,5 +1,6 @@
 import Playlists from "./PLaylists.js";
 import Song from './song.js';
+import Recent from './Recent.js';
 
 let urlPlaylists = 'https://squirrelsmusic.herokuapp.com/playlists/';
 let idUser = localStorage.getItem('idUserLogin');
@@ -12,7 +13,7 @@ function getPlaylitsUser() {
       return response.json();
     })
     .then((data) => {
-        data.data.forEach((infoPlaylist) => {
+      data.data.forEach((infoPlaylist) => {
         const playList = new Playlists(infoPlaylist.name, infoPlaylist._id);
         playList.AddplaylistDOM();
       });
@@ -21,7 +22,7 @@ function getPlaylitsUser() {
     })
 }
 
-function paintPlaylist(name, id){
+function paintPlaylist(name, id) {
   const playlist = new Playlists(name, id);
   playlist.addPlaylistNameDOM();
 }
@@ -38,8 +39,8 @@ function getSpecificSong(idSong) {
       const songs = new Song(data.id, data.name, data.album, data.image, data.audio);
       songs.addPlaylistSongsDOM();
     })
-    const contentDOM = document.querySelector('.js-listSongs');
-    contentDOM.innerHTML = ''
+  const contentDOM = document.querySelector('.js-listSongs');
+  contentDOM.innerHTML = ''
 }
 
 function getPlaylistUser(id) {
@@ -68,4 +69,15 @@ function playListName(btnPlaylist) {
   })
 }
 
+const btnRecent = document.querySelector('.clickRecent')
+btnRecent.addEventListener('click', (event) => {
+  const target = event.target;
+  let name = target.innerHTML;
+  const recentList = new Recent(name, idUser);
+  recentList.getRecentUser();
+  recentList.addRecentNameDOM();
+})
+
 getPlaylitsUser();
+
+export default getSpecificSong;
