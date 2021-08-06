@@ -7,7 +7,7 @@ class Playlists {
   AddplaylistDOM(){
     const contentDOM = document.querySelector('.js-playList');
     const content = `
-    <li class="sidebar__playlist--list">
+    <li id="${this.id}" class="sidebar__playlist--list">
       <h3 class="playlist" id="${this.id}">${this.name}</h3>
     </li>
     `;
@@ -34,6 +34,7 @@ class Playlists {
     <li class="songList__edit">
       <h2>${this.name}</h2>
       <button id="${this.id}" class="sidebar__edit js-editMode">Edit</button>
+      <button id="${this.id}" class="sidebar__trash-Playlist js__none">remove</button>
     </li>
     `;
     contentDOM.innerHTML += content;

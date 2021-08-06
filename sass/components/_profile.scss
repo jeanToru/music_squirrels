@@ -81,6 +81,24 @@
   white-space: nowrap;
 }
 
+.sidebar__trash-Playlist {
+  background: transparent;
+  border: none;
+  width: 6rem;
+}
+
+.sidebar__trash-Playlist {
+  background-image: url(../../img/trash1.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  font-size: 4rem;
+  overflow: hidden;
+  padding: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
 .sidebar__check {
   background: transparent;
   border: none;

@@ -2,7 +2,7 @@ import Playlists from "./PLaylists.js";
 import Song from './song.js';
 import Recent from './Recent.js';
 import Favorite from './Favorite.js';
-import { deletePlaylistSong } from './deletePlaylist.js'
+import { deletePlaylistSong, deletePlaylist } from './deletePlaylist.js'
 
 let urlPlaylists = 'https://squirrelsmusic.herokuapp.com/playlists/';
 let idUser = localStorage.getItem('idUserLogin');
@@ -91,7 +91,6 @@ btnFavorite.addEventListener('click', (event) => {
   favoriteList.getFavoriteUser();
   favoriteList.addFavoriteNameDOM();
   const btnEditMode = document.querySelector('.js-editMode');
-  console.log(btnEditMode)
   getBtnEdit(btnEditMode);
 })
 
@@ -102,12 +101,15 @@ function getBtnEdit(btnEditMode) {
     localStorage.setItem('playlistId', idPlaylist);
     const btnPlay = document.querySelectorAll('.form__button--btn');
     const btnTrash = document.querySelectorAll('.sidebar__trash');
+    const btnTrashPlaylist = document.querySelector('.sidebar__trash-Playlist');
+    btnTrashPlaylist.classList.remove('js__none');
     for (let i = 0; i < btnPlay.length; i++) {
       btnTrash[i].classList.remove('js__none');
       btnPlay[i].classList.add('js__none');
     }
     const btnDelete = document.querySelector('.sidebar__trash');
     getBtnDelete(btnDelete);
+    getBtnDeletePlaylist(btnTrashPlaylist);
   })
 }
 
@@ -119,6 +121,27 @@ function getBtnDelete(btnDelete) {
     const idSong = target.getAttribute('id');
     contentDOM.remove();
     deletePlaylistSong(idPlaylist, idSong);
+  })
+}
+
+function getBtnDeletePlaylist(btnDelete) {
+  btnDelete.addEventListener('click', (event) => {
+    const target = event.target;
+    const idPlaylist = target.getAttribute('id');
+    deletePlaylist(idPlaylist);
+    const title =  document.querySelectorAll('.sidebar__playlist--list')
+    const listSongs = document.querySelectorAll('.songList__item');
+    for (let i = 0; i < listSongs.length; i++) {
+      listSongs[i].remove();
+    }
+    for (let i = 0; i < title.length; i++) {
+      if(idPlaylist === title[i].getAttribute('id')){
+        console.log(title[i])
+        title[i].remove();
+      }
+    }
+    const namePlaylist = document.querySelector('.songList__edit');
+    namePlaylist.remove();
   })
 }
 
