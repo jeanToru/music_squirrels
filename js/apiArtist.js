@@ -19,7 +19,6 @@ function fetchDescription(){
   .then((response) => response.json())
     .then((data) => {
       data.forEach((descriptionSong) => {
-        console.log(descriptionSong.id)
         if(descriptionSong.id === id) {
           const description = new Artist(descriptionSong.id, descriptionSong.name, descriptionSong.image, descriptionSong.description);
           description.addDescriptionDOM();

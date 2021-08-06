@@ -15,17 +15,18 @@
       <h1 class="title">Artist</h1>
     </div>
     <div class="container__form">
-      <form class="form" action="">
+      <form id="login" class="form" action="">
         <div class="form__logIn">
           <label for="">Email</label>
           <input type="email" placeholder="Enter Email">
           <label for="">Password</label>
-          <input type="text" placeholder="enter password">
+          <input type="password" placeholder="enter password">
           <div class="form__button">
             <button class="form__button--btn secondaryBtn" type="submit">log in</button>
           </div>
         </div>
-
+      </form>
+        <form id="createUser" class="form" action="">
         <div class="form__singIn">
           <h2>Create Account</h2>
           <label for="">name</label>
@@ -40,11 +41,19 @@
             <button class="form__button--btn mainBtn" type="submit">sing in</button>
           </div>
         </div>
-
       </form>
+
+      <div class="container__modal container__form alert">
+        <p class="container__modal--text">The password does not match</p>
+        <div class="form__button">
+          <button class="form__button--btn mainBtn js-btn-ok">Ok</button>
+        </div>
+      </div>
+
     </div>
   </div>
 <script src="js/apiArtist.js" type="module"></script>
+<script src="js/formValidation.js" type="module"></script>
 </body>
 
 </html>
