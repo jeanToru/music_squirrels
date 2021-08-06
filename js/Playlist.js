@@ -2,6 +2,7 @@ import Playlists from "./PLaylists.js";
 import Song from './song.js';
 import Recent from './Recent.js';
 import Favorite from './Favorite.js';
+import { deletePlaylistSong } from './deletePlaylist.js'
 
 let urlPlaylists = 'https://squirrelsmusic.herokuapp.com/playlists/';
 let idUser = localStorage.getItem('idUserLogin');
@@ -95,19 +96,31 @@ btnFavorite.addEventListener('click', (event) => {
 })
 
 function getBtnEdit(btnEditMode) {
-  btnEditMode.addEventListener('click', () => {
+  btnEditMode.addEventListener('click', (event) => {
+    const target = event.target;
+    const idPlaylist = target.getAttribute('id');
+    localStorage.setItem('playlistId', idPlaylist);
     const btnPlay = document.querySelectorAll('.form__button--btn');
     const btnTrash = document.querySelectorAll('.sidebar__trash');
-    for(let i = 0; i < btnPlay.length; i++) {
+    for (let i = 0; i < btnPlay.length; i++) {
       btnTrash[i].classList.remove('js__none');
       btnPlay[i].classList.add('js__none');
     }
+    const btnDelete = document.querySelector('.sidebar__trash');
+    getBtnDelete(btnDelete);
   })
 }
 
-//const btn = document.querySelector('.js-edit__favorite');
-
+function getBtnDelete(btnDelete) {
+  btnDelete.addEventListener('click', (event) => {
+    const idPlaylist = localStorage.getItem('playlistId');
+    const contentDOM = document.querySelector('.songList__item');
+    const target = event.target;
+    const idSong = target.getAttribute('id');
+    contentDOM.remove();
+    deletePlaylistSong(idPlaylist, idSong);
+  })
+}
 
 getPlaylitsUser();
-
 export default getSpecificSong;
