@@ -30,7 +30,6 @@ function paintPlaylist(name, id) {
   const playlist = new Playlists(name, id);
   playlist.addPlaylistNameDOM();
   const btnEditMode = document.querySelector('.js-editMode');
-  console.log(btnEditMode)
   getBtnEdit(btnEditMode);
 }
 
@@ -136,7 +135,6 @@ function getBtnDeletePlaylist(btnDelete) {
     }
     for (let i = 0; i < title.length; i++) {
       if(idPlaylist === title[i].getAttribute('id')){
-        console.log(title[i])
         title[i].remove();
       }
     }

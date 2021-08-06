@@ -11,7 +11,7 @@ class Artist {
     const content = `
       <div id="${this.id}" class="artist_content">
         <img class="artist_content--album" src="${this.image}" alt="">
-        <a href="../songs/index.html">
+        <a href="./songs/index.html">
           <h2 id="${this.id}" class="artist_content--name">${this.name}</h2>
         </a>
       </div>
