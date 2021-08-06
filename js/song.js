@@ -42,7 +42,8 @@ class Song {
         <p class="size">${this.album}</p>
         <span>Album</span>
       </div>
-      <button class="form__button--btn mainBtn">Play</button>
+      <button id="${this.id}" class="form__button--btn mainBtn">Play</button>
+      <button id="${this.id}" class="sidebar__trash js__none">remove</button>
     </li>
     `;
     contentDOM.innerHTML += content;

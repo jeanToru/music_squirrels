@@ -28,10 +28,6 @@
   }
 }
 
-.js__none {
-  display: none;
-}
-
 .container__modal--text {
   font-size: $size-m;
 }
@@ -98,4 +94,8 @@ select {
 
 .alert {
   background: $third-color;
+}
+
+.js__none {
+  display: none;
 }

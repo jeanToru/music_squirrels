@@ -62,3 +62,39 @@
 .size {
   font-size: 1.5rem;
 }
+
+.sidebar__trash {
+  background: transparent;
+  border: none;
+  width: 6rem;
+}
+
+.sidebar__trash {
+  background-image: url(../../img/trash1.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  font-size: 4rem;
+  overflow: hidden;
+  padding: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.sidebar__check {
+  background: transparent;
+  border: none;
+  width: 6rem;
+}
+
+.sidebar__check {
+  background-image: url(../../img/check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  font-size: 4rem;
+  overflow: hidden;
+  padding: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+}

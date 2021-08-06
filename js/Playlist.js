@@ -28,6 +28,9 @@ function getPlaylitsUser() {
 function paintPlaylist(name, id) {
   const playlist = new Playlists(name, id);
   playlist.addPlaylistNameDOM();
+  const btnEditMode = document.querySelector('.js-editMode');
+  console.log(btnEditMode)
+  getBtnEdit(btnEditMode);
 }
 
 function getSpecificSong(idSong) {
@@ -57,7 +60,7 @@ function getPlaylistUser(id) {
     .then((data) => {
       const songList = data.data.songs;
       songList.forEach((songs) => {
-        getSpecificSong(songs)
+        getSpecificSong(songs);
       })
     })
 }
@@ -84,9 +87,26 @@ btnFavorite.addEventListener('click', (event) => {
   const target = event.target;
   let name = target.innerHTML;
   const favoriteList = new Favorite(name, idUser);
-  favoriteList.getRecentUser();
-  favoriteList.addRecentNameDOM();
+  favoriteList.getFavoriteUser();
+  favoriteList.addFavoriteNameDOM();
+  const btnEditMode = document.querySelector('.js-editMode');
+  console.log(btnEditMode)
+  getBtnEdit(btnEditMode);
 })
+
+function getBtnEdit(btnEditMode) {
+  btnEditMode.addEventListener('click', () => {
+    const btnPlay = document.querySelectorAll('.form__button--btn');
+    const btnTrash = document.querySelectorAll('.sidebar__trash');
+    for(let i = 0; i < btnPlay.length; i++) {
+      btnTrash[i].classList.remove('js__none');
+      btnPlay[i].classList.add('js__none');
+    }
+  })
+}
+
+//const btn = document.querySelector('.js-edit__favorite');
+
 
 getPlaylitsUser();
 

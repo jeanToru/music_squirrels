@@ -33,7 +33,7 @@ class Playlists {
     const content = `
     <li class="songList__edit">
       <h2>${this.name}</h2>
-      <button class="sidebar__edit">edit</button>
+      <button id="${this.id}" class="sidebar__edit js-editMode">Edit</button>
     </li>
     `;
     contentDOM.innerHTML += content;

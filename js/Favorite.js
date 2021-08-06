@@ -6,7 +6,7 @@ class Favorite {
     this.id = id;
   }
 
-  getRecentUser() {
+  getFavoriteUser() {
     const urlPlaylist = 'https://squirrelsmusic.herokuapp.com/favorite-music/';
     fetch(`${urlPlaylist}${this.id}`, {
       method: "GET",
@@ -22,13 +22,13 @@ class Favorite {
       })
   }
 
-  addRecentNameDOM(){
+  addFavoriteNameDOM(){
     const contentDOM = document.querySelector('.js-playlistName');
     contentDOM.innerHTML = '';
     const content = `
     <li class="songList__edit">
       <h2>${this.name}</h2>
-      <button class="sidebar__edit">edit</button>
+      <button class="sidebar__edit js-edit__favorite">edit</button>
     </li>
     `;
     contentDOM.innerHTML += content;

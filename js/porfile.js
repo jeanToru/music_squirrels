@@ -23,15 +23,15 @@ function updateName(name){
   UpdateUser.updateNameUser();
 }
 
-btnEdit.addEventListener('click', (e) => {
-  if (e.target.classList.contains('sidebar__edit')) {
+btnEdit.addEventListener('click', (event) => {
+  if (event.target.classList.contains('sidebar__edit')) {
     const userName =  document.querySelector('.sidebar__name');
-    if (!e.target.classList.contains('change')) {
+    if (!event.target.classList.contains('change')) {
       userName.setAttribute('contentEditable', 'true');
-    }else {
-      updateName(userName)
+    } else {
+      updateName(userName);
     }
-    e.target.classList.toggle('change');
+    event.target.classList.toggle('change');
   }
 })
 
