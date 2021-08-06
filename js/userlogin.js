@@ -49,8 +49,8 @@ function checkUsers() {
     .then((data) => {
       for (let i = 0; i < data.data.length; i++) {
         if (data.data[i].name === nameUser) {
-          console.log(data.data[i]._id)
-          console.log(localStorage.setItem('idUserSingUp', data.data[i]._id));
+          data.data[i]._id;
+          localStorage.setItem('idUserSingUp', data.data[i]._id);
           const userWelcome = new Data(data.data[i].name);
           userWelcome.addUserLogin();
         }

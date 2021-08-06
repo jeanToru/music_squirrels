@@ -2,14 +2,13 @@ import {Canvas} from './canvas.js';
 import {audio, AudioContext} from './player.js'
 
 function audioInit() {
-  const audioContext = new AudioContext();  // para administrar y reproducir todos los sonidos y utilizar api web
+  const audioContext = new AudioContext();
   let source = audioContext.createMediaElementSource(audio);
   let analyser = audioContext.createAnalyser();
-  source.connect(analyser); // con esto conectamos lo que hemos declarado anteriormente
+  source.connect(analyser);
   analyser.connect(audioContext.destination);
   analyser.fftSize = 128;
-  let bufferLength = analyser.frequencyBinCount; // obtenemos los datos de frecuencia
-  let dataArray = new Uint8Array(bufferLength);
+  let bufferLength = analyser.frequencyBinCount;
 
   let canvas = document.getElementById ("canvas");
   let ctx = canvas.getContext ("2d");
@@ -25,7 +24,6 @@ function audioInit() {
     canva.drawBars();
     requestAnimationFrame(animate);
   }
-
   animate()
 }
 
