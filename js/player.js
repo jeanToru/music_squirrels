@@ -49,7 +49,6 @@ fetch(URL)
           init(song);
         })
       }
-
       previus();
       next();
     }

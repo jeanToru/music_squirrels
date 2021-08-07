@@ -23,7 +23,7 @@ class Playlists {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        return data;
       })
   }
 

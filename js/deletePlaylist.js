@@ -7,7 +7,7 @@ function deletePlaylist(idPlaylist) {
       return response.json();
     })
     .then((data) => {
-      console.log(data)
+      return data;
     })
 }
 
@@ -20,7 +20,7 @@ function deletePlaylistSong(idPlaylist, idSong) {
       return response.json();
     })
     .then((data) => {
-      console.log(data)
+      return data;
     })
 }
 
