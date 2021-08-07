@@ -9,6 +9,7 @@ function audioInit() {
   analyser.connect(audioContext.destination);
   analyser.fftSize = 128;
   let bufferLength = analyser.frequencyBinCount;
+  let dataArray = new Uint8Array(bufferLength);
 
   let canvas = document.getElementById ("canvas");
   let ctx = canvas.getContext ("2d");
