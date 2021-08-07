@@ -23,6 +23,7 @@
 
 .addPlaylist {
   background-image: url(../../img/plus.svg);
+  background-size: 4rem;
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
@@ -39,23 +40,27 @@
 
 .before {
   background-image: url(../../img/before.svg);
+  background-size: 4rem;
 }
 
 .play {
   background-image: url(../../img/play.svg);
-  font-size: 6rem;
+  background-size: 4rem;
 }
 
 .pause {
   background-image: url(../../img/pause.svg);
+  background-size: 4rem;
 }
 
 .after {
   background-image: url(../../img/after.svg);
+  background-size: 4rem;
 }
 
 .favorite {
   background-image: url(../../img/favorite.svg);
+  background-size: 4rem;
   margin-left: 105px;
 }
 
